@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+        }
+
+        button {
+            --c: #dea23a; /* Color principal */
+            box-shadow: 0 0 0 .1em inset var(--c); 
+            --_g: linear-gradient(var(--c) 0 0) no-repeat;
+            background: 
+                var(--_g) calc(var(--_p,0%) - 100%) 0%,
+                var(--_g) calc(200% - var(--_p,0%)) 0%,
+                var(--_g) calc(var(--_p,0%) - 100%) 100%,
+                var(--_g) calc(200% - var(--_p,0%)) 100%;
+            background-size: 50.5% calc(var(--_p,0%)/2 + .5%);
+            outline-offset: .1em;
+            transition: background-size .20s, background-position 0s .20s;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            color: #4c4a49;
+            width: 200px; /* Ancho fijo para todos los botones */
+            text-align: center; /* Alineación del texto */
+        }
+
+        button:hover {
+            --_p: 100%;
+            transition: background-position .4s, background-size 0s;
+        }
+
+        button:active {
+            box-shadow: 0 0 9e9q inset #0009; 
+            background-color: var(--c);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="menu">
+        <a href="bajas.html"><button>Bajas</button></a>
+        <a href="docentes.php"><button>Docentes</button></a>
+        <a href="elementos.php"><button>Elementos</button></a>
+        <a href="funcionarios.php"><button>Funcionarios</button></a>
+        <a href="ingreso_elementos.php"><button>Ingreso de elementos</button></a>
+        <a href="inventario_actual.html"><button>Inventario</button></a>
+        <a href="requisicion.php"><button>Requisición</button></a>
+        <a href="traspaso.php"><button>Traspaso</button></a>
+        <a href="crud_usuarios.php"><button>Usuarios</button></a>
+
+        <a href="cerrar_sesion.php"><button class="btn-cerrar-sesion">Salir</button></a>
+
+    </div>
+
+</body>
+</html>

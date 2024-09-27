@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="inicio.css" />
+    <title>Cargando...</title>
+</head>
+<body>
+    <div class="gooey">
+        <span class="dot"></span>
+        <div class="dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div><center><p>Validando datos...</p></center>
+    </div>
+
+    <form id="hidden-form" action="inicio.php" method="post">
+        <input type="hidden" id="usuario" name="usuario" placeholder="Nombre">
+        <input type="hidden" id="pass" name="pass" placeholder="Contraseña">
+    </form>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('usuario').value = urlParams.get('usuario');
+        document.getElementById('pass').value = urlParams.get('pass');
+
+        // Enviar el formulario automáticamente después de 5 segundos
+        setTimeout(function() {
+            document.getElementById('hidden-form').submit();
+        }, 5000); // 5000 milisegundos = 5 segundos
+    </script>
+</body>
+</html>

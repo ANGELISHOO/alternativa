@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  background: #cfcfcf; /* Fondo gris claro */
+}
+
+.container {
+  max-width: 800px;
+  background: #fff; /* Fondo blanco */
+  width: 800px;
+  padding: 25px 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* Para el botón flotante */
+}
+
+.text {
+  text-align: center;
+  font-size: 41px;
+  font-weight: 600;
+  color: #F18F4E; /* Color del título */
+  margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+.new-item-btn {
+  text-align: center;
+  margin-bottom: 30px; /* Espacio antes del formulario */
+}
+
+.new-item-btn .input-data {
+  position: relative;
+  height: 45px;
+  width: 30%; /* Ancho del botón */
+  margin: 0 auto; /* Centrar el botón */
+}
+
+.new-item-btn .input-data input {
+  background: #dddbdb; /* Color de fondo del botón */
+  border: none;
+  color: #F18F4E; /* Color del texto del botón */
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+.container form {
+  background: #fff; /* Fondo blanco */
+  padding: 0; /* Sin padding adicional */
+}
+
+.form-row {
+  display: flex;
+  margin: 32px 0;
+}
+
+.form-row .input-data {
+  width: 100%;
+  margin: 0 20px;
+  position: relative;
+}
+
+.form-row .input-data input,
+.form-row .textarea textarea {
+  display: block;
+  width: 100%;
+  height: 40px;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+}
+
+.form-row .textarea textarea {
+  height: 70px;
+  padding-top: 10px;
+}
+
+.input-data input:focus ~ label,
+.textarea textarea:focus ~ label,
+.input-data input:valid ~ label,
+.textarea textarea:valid ~ label {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #f0a940; /* Color del texto cuando está en foco */
+}
+
+.input-data label {
+  position: absolute;
+  pointer-events: none;
+  bottom: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.textarea label {
+  width: 100%;
+  bottom: 40px;
+  background: #fff;
+}
+
+.input-data .underline {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+
+.input-data .underline:before {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 100%;
+  background: #e29b4b; /* Color de la línea de subrayado */
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before,
+.textarea textarea:focus ~ .underline:before,
+.textarea textarea:valid ~ .underline:before {
+  transform: scale(1);
+}
+
+.button-container-1 {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 6vh;
+  overflow: hidden;
+  border: 1px solid;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  transition: 0.5s;
+  letter-spacing: 1px;
+}
+
+.button-container-1 button {
+  width: 101%;
+  height: 100%;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  letter-spacing: 1px;
+  background: #e29b4b;
+  -webkit-mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  mask: url("https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png");
+  -webkit-mask-size: 2300% 100%;
+  mask-size: 2300% 100%;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  position: relative; /* Asegura la visibilidad del texto */
+  z-index: 1; /* Asegura la visibilidad del texto sobre el fondo animado */
+  overflow: hidden; /* Evita que el texto se salga del botón */
+  transition: background 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.button-container-1 button:hover {
+  -webkit-animation: ani 0.7s steps(22) forwards;
+  animation: ani 0.7s steps(22) forwards;
+  color: #fff; /* Mantiene el color del texto blanco durante el hover */
+  background: #e29b4b; /* Mantiene el color de fondo durante la animación */
+}
+
+@-webkit-keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+a {
+  color: #00ff95;
+}
+
+@media (max-width: 700px) {
+  .text {
+    font-size: 30px;
+  }
+
+  .container form {
+    padding: 10px 0 0 0;
+  }
+
+  .form-row {
+    display: block;
+  }
+
+  .form-row .input-data {
+    margin: 35px 0!important;
+  }
+
+  .button-container-1 {
+    width: 40%!important;
+    margin-top: 6vh;
+  }
+}
